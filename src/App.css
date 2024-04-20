@@ -1,38 +1,136 @@
-.App {
+/* App.css */
+
+/* Importing Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
+
+header {
+  font-family: 'Sedan', sans-serif;
+  text-align: center;
+  font-style: italic;
+  font-size: 25px;
+}
+
+/* Applying Poppins font to the entire application */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Setting a light background color */
+}
+
+/* Styling the navigation bar */
+nav {
+  background-color: #333; /* Setting a dark background color */
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav ul li {
+  display: inline;
+  margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav ul li a {
+  color: #fff; /* Setting a white text color */
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul li a:hover {
+  color: #ffd700; /* Setting a yellow text color on hover */
+}
+
+/* Styling the container div */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Setting a white background color */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
+
+/* Styling the h2 element */
+h2 {
+  color: #333; /* Setting a dark text color */
+  margin-bottom: 10px;
+  font-style: italic;
+  font-family: 'Sedan', sans-serif;
+  font-size: 3.7rem; /* Adjust font size as needed */
+}
+
+/* Styling the paragraph element */
+p {
+  color: black; /* Setting a slightly darker text color */
+  line-height: 1.8; /* Adjust line height for readability */
+  font-size: 1.2rem; /* Adjust font size as needed */
+}
+
+.home-container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+}
+
+/* Style for image container */
+.image-container {
+  flex: 1;
+  margin-right: 20px; /* Add some spacing between image and text */
+}
+
+/* Style for content container */
+.content-container {
+  flex: 1;
+}
+
+/* Style for the image inside image container */
+.image-container img {
+  max-width: 100%;
+  height: 700px;
+}
+
+/* Styling the home container */
+.home-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative; /* Set position relative for absolute positioning of the background */
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for the image container */
+.image-container {
+  flex: 1;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for the content container */
+.content-container {
+  flex: 1;
+}
+
+/* Styling the background image */
+.home-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%; /* Position the background on the right side */
+  background-image: url('./images/BurgerBg.png'); /* Path to the BurgerBg image */
+  background-size: cover;
+  opacity: 0.2; /* Lowered opacity */
+  z-index: -1;
+}
+
+/* Styling for the text */
+h2, p {
+  position: relative; /* Ensure text stays above the background */
+  z-index: 1; /* Ensure text stays above the background */
 }
